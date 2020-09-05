@@ -1,0 +1,2 @@
+# p_body
+An in progress machine learning library for php web developers of varied experiences to have access to sophisticated and scalable neural networks for their web projects. The brilliance of p_body is the ability to create neural network objects of potentially infinite scale just by inputting two-dimensional arrays, allowing for relative novices to evaluate complex problems without having to have extensive knowledge of web-design. Contributors are welcome 
