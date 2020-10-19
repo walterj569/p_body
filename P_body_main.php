@@ -18,7 +18,7 @@ class Matrix {
 
 
      for($i=0; $i< $this->rows; $i++) {
-       $this->matrix[$i] = [];
+       $this->matrix[$i] = array();
        for($j=0; $j<$this->cols; $j++) {
            $this->matrix[$i][$j] = 0;
        }
