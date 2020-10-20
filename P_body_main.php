@@ -29,23 +29,29 @@ class Matrix {
   ///static methods
 
   //static multiply method
-  public static function staticMultiply($m1, $m2){
-    if($m1->cols == $m2->rows){//
-      $result = new Matrix($m1->rows, $m2->cols);
-      for($i =0 ; $i < $result->rows; $i++){//
-        for($j =0 ; $j < $result->cols; $j++){//
-           $sum = 0;
-           for($k = 0; $k < $m1->cols; $k++){//
-             $sum = $sum + $m1->matrix[$i][$k] * $m2->matrix[$k][$j];
-           }//
-           $result->matrix[$i][$j] = $sum;
+ public static function staticMultiply($m1, $m2){
+    if($m1 instanceof Matrix && $m2 instanceof Matrix){
+
+      throw new Exception("Invalid input, both inputs must be instances of a Matrix");
+
+    }else{
+      if($m1->cols == $m2->rows){//
+        $result = new Matrix($m1->rows, $m2->cols);
+        for($i =0 ; $i < $result->rows; $i++){//
+          for($j =0 ; $j < $result->cols; $j++){//
+             $sum = 0;
+             for($k = 0; $k < $m1->cols; $k++){//
+               $sum = $sum + $m1->matrix[$i][$k] * $m2->matrix[$k][$j];
+             }//
+             $result->matrix[$i][$j] = $sum;
+            }//
           }//
-        }//
-      return $result;
+        return $result;
+      }else{
+        throw new Exception("Matrix no1 number columns must equal Matrix no2 number of rows");
+      }
     }
   }
-
-
   //static subrtact method
 
   public static function staticSubtract($a, $b){
