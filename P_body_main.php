@@ -55,6 +55,12 @@ class Matrix {
   //static subrtact method
 
   public static function staticSubtract($a, $b){
+    if($a instanceof Matrix && $b instanceof Matrix){
+
+      throw new Exception("Invalid input, both inputs must be instances of a Matrix");
+
+    }else{
+
      $result = new Matrix($a->rows, $a->cols);
      for($i = 0; $i < $result->rows; $i++){
         for( $j =0; $j < $result->cols; $j++){
@@ -62,6 +68,7 @@ class Matrix {
         }
       }
       return $result;
+    }
   }
 
   //static method that converts a matrix into an array
